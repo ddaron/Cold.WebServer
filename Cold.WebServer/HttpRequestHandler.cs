@@ -46,7 +46,7 @@ namespace Cold.WebServer
                 }
             }
 
-            Console.WriteLine("Client ({0}) disconnected", clientIndex);
+            Console.WriteLine("Client ({0}) disconnected");
         }
     }
 }
