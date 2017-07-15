@@ -58,5 +58,5 @@ crashlytics-build.properties
 fabric.properties
 
 .idea/
-bin/
-obj/
+*/bin/
+*/obj/

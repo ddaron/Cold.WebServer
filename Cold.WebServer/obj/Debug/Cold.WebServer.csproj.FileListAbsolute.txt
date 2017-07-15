@@ -1,6 +1,0 @@
-/home/ddaron/RiderProjects/Cold.WebServer/Cold.WebServer/bin/Debug/Cold.WebServer.exe
-/home/ddaron/RiderProjects/Cold.WebServer/Cold.WebServer/bin/Debug/Cold.WebServer.pdb
-/home/ddaron/RiderProjects/Cold.WebServer/Cold.WebServer/obj/Debug/Cold.WebServer.csprojResolveAssemblyReference.cache
-/home/ddaron/RiderProjects/Cold.WebServer/Cold.WebServer/obj/Debug/Cold.WebServer.csproj.CoreCompileInputs.cache
-/home/ddaron/RiderProjects/Cold.WebServer/Cold.WebServer/obj/Debug/Cold.WebServer.exe
-/home/ddaron/RiderProjects/Cold.WebServer/Cold.WebServer/obj/Debug/Cold.WebServer.pdb
