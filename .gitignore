@@ -60,3 +60,5 @@ fabric.properties
 .idea/
 */bin/
 */obj/
+
+packages/
