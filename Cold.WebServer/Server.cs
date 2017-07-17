@@ -60,8 +60,7 @@ namespace Cold.WebServer
         {
             while (!ct.IsCancellationRequested)
             {
-                TcpClient client = await listener.AcceptTcpClientAsync();
-//                    .ConfigureAwait(false);
+                var client = await listener.AcceptTcpClientAsync();
                 
                 _clientHandler.HandleConnection(client, ct);
             }
