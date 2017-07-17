@@ -1,0 +1,4 @@
+language: csharp
+solution: Cold.WebServer1.sln
+mono:
+  - latest
