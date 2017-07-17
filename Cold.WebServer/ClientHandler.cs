@@ -58,8 +58,6 @@ namespace Cold.WebServer
 //                        .ConfigureAwait(false);
                 }
             }
-
-            Console.WriteLine("Client ({0}) disconnected");
         }
     }
 }
