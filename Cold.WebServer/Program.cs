@@ -12,7 +12,10 @@ namespace Cold.WebServer
     {
         public static void Main(string[] args)
         {
-           var server = new Server("127.0.0.1", 11000);
+            var server = new Server("127.0.0.1", 11000)
+            {
+                ContentPath = @"/home/ddaron/www/"
+            };
             server.Run();
         }
     }

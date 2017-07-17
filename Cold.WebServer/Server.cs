@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Net.Sockets;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -9,22 +10,34 @@ namespace Cold.WebServer
 {
     public class Server
     {
+        public string ContentPath { get; set; }
+        
         private IPAddress _listenOn { get; }
         private int _port { get; }
-        
-        private readonly CancellationTokenSource _cts = new CancellationTokenSource();
-        private readonly HttpRequestHandler _httpRequestHandler = new HttpRequestHandler();
 
-        public Server(IPAddress listenOn, int port)
+        private readonly CancellationTokenSource _cts;
+        private readonly RequestFactory _requestFactory;
+        private readonly ClientHandler _clientHandler;
+        private readonly ResponseFactory _responseFactory;
+
+        public Server(IPAddress listenOn, int port) : this()
         {
             _listenOn = listenOn;
             _port = port;
         }
 
-        public Server(string listenOn, int port)
+        public Server(string listenOn, int port) : this()
         {
             _listenOn = IPAddress.Parse(listenOn);
             _port = port;
+        }
+
+        private Server()
+        {
+            _cts = new CancellationTokenSource();
+            _requestFactory = new RequestFactory();
+            _responseFactory = new ResponseFactory();
+            _clientHandler = new ClientHandler(_requestFactory, _responseFactory);
         }
 
         public void Run()
@@ -47,10 +60,10 @@ namespace Cold.WebServer
         {
             while (!ct.IsCancellationRequested)
             {
-                TcpClient client = await listener.AcceptTcpClientAsync()
-                    .ConfigureAwait(false);
+                TcpClient client = await listener.AcceptTcpClientAsync();
+//                    .ConfigureAwait(false);
                 
-                _httpRequestHandler.HandleConnection(client, ct);
+                _clientHandler.HandleConnection(client, ct);
             }
         }
     }
