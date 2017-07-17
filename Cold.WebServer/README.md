@@ -5,6 +5,8 @@ Basic idea for the server is [from this dailyprogrammer post](https://www.reddit
 
 ### Todo list
 
+* [ ] Load files from disk.
+* [ ] ANY exception handling.
 * [ ] HTTP logger
 * [ ] Template engine
 * [ ] Configuration: List directory
@@ -21,6 +23,7 @@ Basic idea for the server is [from this dailyprogrammer post](https://www.reddit
     * [ ] 500
     * [ ] Other
 * [ ] Configuration: Customizable error pages
+* [ ] Tests 
 
 ### Future:
 

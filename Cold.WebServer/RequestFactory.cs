@@ -35,18 +35,16 @@ namespace Cold.WebServer
             var filePath = httpHeader[1];
             var httpVersion = httpHeader[2];
 
-            if (supportedVerbs.Contains(verb) && supportedHttpVersions.Contains(httpVersion))
+            if (!supportedVerbs.Contains(verb) || !supportedHttpVersions.Contains(httpVersion)) return RequestBase.NULL;
+            
+            switch (verb)
             {
-                switch (verb)
-                {
-                    case "GET":
-                        return new RequestHttpGet(filePath);
-                    default:
-                        return RequestBase.NULL;
-                }
+                case "GET":
+                    return new RequestHttpGet(buffer);
+                default:
+                    return RequestBase.NULL;
             }
 
-            return RequestBase.NULL;
         }
     }
 }

@@ -10,8 +10,12 @@ namespace Cold.WebServer
 {
     public class Server
     {
+        // Server settings
         public string ContentPath { get; set; }
+        public bool ListDirectoryContents { get; set; }
         
+        
+        // Internals
         private IPAddress _listenOn { get; }
         private int _port { get; }
 

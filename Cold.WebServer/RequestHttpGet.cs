@@ -1,12 +1,15 @@
-﻿namespace Cold.WebServer
+﻿using System.Collections.Generic;
+
+namespace Cold.WebServer
 {
     public class RequestHttpGet : RequestBase
     {
-        public string FilePath { get; }
-
-        public RequestHttpGet(string filePath)
+        public RequestHttpGet(string httpVersion, IEnumerable<string> httpHeaders, string messageBody, string requestPath) : base(HttpVerb.Get, httpVersion, httpHeaders, messageBody, requestPath)
         {
-            FilePath = filePath;
+        }
+
+        public RequestHttpGet(byte[] data) : base(data)
+        {
         }
     }
 }

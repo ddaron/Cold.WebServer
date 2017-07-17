@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="BaseHttpResponse.cs" />
     <Compile Include="ClientHandler.cs" />
-    <Compile Include="HttpResponse.cs" />
+    <Compile Include="OkHttpResponse.cs" />
     <Compile Include="HttpStatusCode.cs" />
     <Compile Include="HttpVerb.cs" />
     <Compile Include="HttpVersion.cs" />
